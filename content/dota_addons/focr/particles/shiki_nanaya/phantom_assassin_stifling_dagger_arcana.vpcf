@@ -1,0 +1,120 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 16
+	m_flConstantRadius = 1.000000
+	m_bShouldSort = false
+	m_Renderers =
+	[
+		{
+			_class = "C_OP_RenderModels"
+			m_bAnimated = true
+			m_nLOD = 1
+			m_ActivityName = "ACT_DOTA_RUN"
+			m_bIgnoreNormal = true
+			m_bManualAnimFrame = true
+			m_nBodyGroupField = 19
+			m_nSubModelField = 19
+			m_nAnimationField = 19
+			m_nManualFrameField = 19
+			m_hOverrideMaterial = resource:"materials/shikinanaya/nanayashiki.tga"
+			m_nModelCP = 0
+			m_bForceDrawInterlevedWithSiblings = true
+		},
+	]
+	m_Operators =
+	[
+		{
+			_class = "C_OP_BasicMovement"
+		},
+		{
+			_class = "C_OP_MaxVelocity"
+			m_flMaxVelocity = 280.000000
+			m_nOverrideCP = 2
+		},
+		{
+			_class = "C_OP_Decay"
+			m_nOpEndCapState = 1
+		},
+		{
+			_class = "C_OP_SetControlPointsToParticle"
+			m_bSetOrientation = true
+			m_nFirstControlPoint = 3
+		},
+		{
+			_class = "C_OP_CPOffsetToPercentageBetweenCPs"
+			m_bScaleOffset = true
+			m_flInputBias = 0.100000
+			m_vecOffset =
+			[
+				0.000000,
+				0.000000,
+				0.350000,
+			]
+			m_nOffsetCP = 1
+			m_flInputMax = 0.000000
+			m_flInputMin = 1.000000
+		},
+		{
+			_class = "C_OP_RemapVelocityToVector"
+			m_bNormalize = true
+			m_nFieldOutput = 21
+		},
+		{
+			_class = "C_OP_FadeInSimple"
+			m_flFadeInTime = 0.450000
+		},
+		{
+			_class = "C_OP_FadeOutSimple"
+			m_flFadeOutTime = 0.450000
+		},
+	]
+	m_Initializers =
+	[
+		{
+			_class = "C_INIT_CreateWithinSphere"
+		},
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 2.500000
+			m_fLifetimeMax = 2.500000
+		},
+		{
+			_class = "C_INIT_RemapScalar"
+			m_nFieldInput = 9
+			m_nFieldOutput = 18
+			m_flInputMax = 100000.000000
+			m_flOutputMax = 10000.000000
+		},
+		{
+			_class = "C_INIT_RemapInitialCPDirectionToRotation"
+			m_nFieldOutput = 12
+			m_flOffsetRot = 180.000000
+		},
+		{
+			_class = "C_INIT_InitialSequenceFromModel"
+			m_nFieldOutput = 9
+			m_nFieldOutputAnim = 13
+			m_flInputMax = 10000.000000
+			m_flOutputMax = 10000.000000
+		},
+	]
+	m_Emitters =
+	[
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flEmissionDuration = 1.800000
+			m_flEmitRate = 5.000000
+		},
+	]
+	m_ForceGenerators =
+	[
+		{
+			_class = "C_OP_AttractToControlPoint"
+			m_nControlPointNumber = 4
+			m_fFalloffPower = 0.000000
+			m_fForceAmount = 1000000.000000
+		},
+	]
+}

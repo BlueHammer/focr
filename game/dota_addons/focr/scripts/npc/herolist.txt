@@ -1,0 +1,12 @@
+  "CustomHeroList"
+  {
+    "npc_dota_hero_storm_spirit" "1" 
+	"npc_dota_hero_juggernaut"	"1"
+	"npc_dota_hero_dragon_knight"	"1"
+	"npc_dota_hero_bloodseeker"	"1"
+	"npc_dota_hero_kunkka"	"1"
+	"npc_dota_hero_undying"	"1"
+	"npc_dota_hero_dark_seer"	"1"
+	"npc_dota_hero_riki"	"1"
+	"npc_dota_hero_earthshaker"	"1"
+  }
