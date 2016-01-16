@@ -1,0 +1,87 @@
+"dota_shops"
+{
+    //from: https://www.reddit.com/r/Dota2Modding/comments/2dpts1/tutorial_creating_a_custom_shop_step_by_step/
+    //Home Shop Start
+    //--------------------------
+    "consumables"
+    {
+        "item"      "item_smallhppot"
+        "item"      "item_largehppot"
+        "item"      "item_healthstone"
+        "item"      "item_speedpotion"
+        "item"      "item_cloneorb"
+        "item"      "item_kawamariscroll"
+    }
+
+    "attributes"
+    {
+        
+    }
+
+    "weapons_armor"
+    {
+        
+    }
+
+    "misc"
+    {
+        
+    }   
+
+    // Level 1 - Green Recipes
+    "basics"
+    {
+        
+    }
+
+    // Level 2 - Blue Recipes
+    "support"
+    {
+        
+    }
+
+    "magics"
+    {
+        
+    }
+
+    // Level 3 - Purple Recipes
+    "defense"
+    {
+        
+    }
+
+    "weapons"
+    {
+        
+    }
+
+ // Level 4 - Orange / Orb / Artifacts
+    "artifacts"
+    {
+        
+    }
+
+  //Sideshop Start - Page 1
+  //--------------------------
+
+    "sideshop1"
+    {
+        
+    }
+
+ //Sideshop Page 2
+
+    "sideshop2"
+    {
+        
+    }
+
+ //Secret Shop Start
+ //--------------------------   
+
+    "secretshop"
+    {
+        
+    }
+}

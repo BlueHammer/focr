@@ -1,5 +1,6 @@
 "DOTAAbilities"
 {
+	//I don't know if you guys need this, but I'll keep it here, unchanged, just in case.
 "item_stat_modifier"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -135,6 +136,388 @@
 					"MODIFIER_STATE_FROZEN" "MODIFIER_STATE_VALUE_ENABLED"
 				}
 			}			
+		}
+	}
+
+	//TODO: Item activation triggers the animation of a hero's 1st skill (q)
+	//Small Health Potion
+	"item_smallhppot"
+	{
+		//General
+		"ID" 					"1000"
+		"BaseClass"             "item_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"ItemQuality"			"consumable"
+
+		//Item Info
+		"ItemCost" 				"250"
+		"ItemKillable"			"0"
+		"ItemSellable"			"1"
+		"ItemPurchasable" 		"1"
+		"ItemDroppable" 		"1"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+
+		"ItemInitialCharges"	"1"
+		"ItemHideCharges"		"1"
+		"ItemStackable"			"0"
+		"ItemPermanent"			"0"
+
+		"OnSpellStart"
+		{
+			"SpendCharge"
+			{}
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"Heal"
+				"Target"			"CASTER"
+				"heal_amount"		"500"
+			}
+		}
+			
+		// Special
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_amount"			"500"
+			}
+		}
+	}
+
+	//Large Health Potion
+	"item_largehppot"
+	{
+		//General
+		"ID" 					"1001"
+		"BaseClass"             "item_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+		//Item Info
+		"ItemCost" 				"500"
+		"ItemKillable"			"0"
+		"ItemSellable"			"1"
+		"ItemPurchasable" 		"1"
+		"ItemDroppable" 		"1"
+		"ItemInitialCharges"	"1"
+		"ItemHideCharges"		"1"
+		"ItemPermanent"			"0"
+		"ItemQuality"			"consumable"
+
+		"OnSpellStart"
+		{
+			"SpendCharge"
+			{}
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"Heal"
+				"Target"			"CASTER"
+				"heal_amount"		"1000"
+			}
+		}
+			
+		// Special
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_amount"			"1000"
+			}
+		}
+		
+	}
+
+	//Health Stone
+	"item_healthstone"
+	{
+		//General
+		"ID" 					"1002"
+		"BaseClass"             "item_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+		//Item Info
+		"ItemCost" 				"2500"
+		"ItemKillable"			"0"
+		"ItemSellable"			"1"
+		"ItemPurchasable" 		"1"
+		"ItemDroppable" 		"1"
+		"ItemInitialCharges"	"1"
+		"ItemHideCharges"		"1"
+		"ItemPermanent"			"0"
+		"ItemQuality"			"consumable"
+
+		"OnSpellStart"
+		{
+			"SpendCharge"
+			{}
+			"RunScript"
+			{
+				"ScriptFile"		"items.lua"
+				"Function"			"Heal"
+				"Target"			"CASTER"
+				"heal_amount"		"5000"
+			}
+		}
+			
+		// Special
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_amount"			"5000"
+			}
+		}
+		
+	}
+
+	//Speed Potion
+	"item_speedpotion"
+	{
+		//General
+		"ID" 					"1003"
+		"BaseClass"             "item_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCooldown"		"20"
+
+		//Item Info
+		"ItemCost" 				"150"
+		"ItemKillable"			"0"
+		"ItemSellable"			"1"
+		"ItemPurchasable" 		"1"
+		"ItemDroppable" 		"1"
+		"ItemInitialCharges"	"1"
+		"ItemHideCharges"		"1"
+		"ItemPermanent"			"0"
+		"ItemQuality"			"consumable"
+
+		"OnSpellStart"
+		{
+			"SpendCharge"
+			{}
+			"ApplyModifier"
+			{
+				"ModifierName"	"speedpotion"
+				"Target" 		"CASTER"
+				"Duration"		"8"
+			}
+		}
+			
+		"Modifiers"
+		{
+			"speedpotion"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+		
+				"EffectName"		"particles/units/items/phase_boots.vpcf"
+				"EffectAttachType"	"follow_origin"
+		
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"	"50"
+				}
+			}
+		}
+	}
+
+	//Clone Orb
+	"item_cloneorb"
+	{
+		//General
+		"ID" 					"1004"
+		"BaseClass"             "item_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+		//Item Info
+		"ItemCost" 				"600"
+		"ItemKillable"			"0"
+		"ItemSellable"			"1"
+		"ItemPurchasable" 		"1"
+		"ItemDroppable" 		"1"
+		"ItemInitialCharges"	"1"
+		"ItemHideCharges"		"1"
+		"ItemPermanent"			"0"
+		"ItemQuality"			"consumable"
+		"AbilityCooldown"		"30"
+		
+		"OnSpellStart"
+		{
+			"SpendCharge"
+			{}
+			"RunScript"
+			{
+				"ScriptFile"	"items.lua"
+				"Function"		"cloneorb_datadriven_on_spell_start"
+			}
+		}
+	}
+
+	//Kawamari Scroll
+	"item_kawamariscroll"
+	{
+		//General
+		"ID"					"1005"
+		"BaseClass"             "item_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+		//Item Info
+		"ItemCost" 				"500"
+		"ItemKillable"			"0"
+		"ItemSellable"			"1"
+		"ItemPurchasable" 		"1"
+		"ItemDroppable" 		"1"
+		"ItemInitialCharges"	"1"
+		"ItemHideCharges"		"1"
+		"ItemPermanent"			"0"
+		"ItemQuality"			"consumable"
+		"AbilityCooldown"		"30"
+
+		"OnSpellStart"
+		{
+			"SpendCharge"
+			{}
+			"SpawnUnit"
+			{
+				//TODO: Add an actual model for the log
+				"UnitName"		"npc_dota_phoenix_sun"
+				"UnitCount"		"1"
+				"SpawnRadius"	"0"
+				"Target"		"CASTER"
+
+				"OnSpawn"
+				{
+					"ApplyModifier"
+					{
+						"Target"		"TARGET"
+						"ModifierName"	"modifier_kawamari_log_form_datadriven"
+					}
+				}
+			}
+			
+			"ApplyModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_kawamari_log_form_caster_datadriven"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_kawamari_log_form_caster_datadriven"
+			{
+				"IsBuff"	"1"
+				
+				"Duration"	"3"
+				
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"items.lua"
+						"Function"			"HideCaster"
+					}
+				}
+				
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"items.lua"
+						"Function"			"ShowCaster"
+					}
+				}
+				
+				"States"
+				{
+					"MODIFIER_STATE_COMMAND_RESTRICTED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_STUNNED"				"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_OUT_OF_GAME"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"			"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+			
+			"modifier_kawamari_log_form_datadriven"
+			{
+				"IsBuff"	"1"
+				
+				"Duration"	"3"
+				
+				"States"
+				{
+					"MODIFIER_STATE_COMMAND_RESTRICTED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ROOTED"					"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_MAGIC_IMMUNE"			"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_DISABLE_HEALING"				"1"
+					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL"	"1"
+					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL"	"1"
+					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE"		"1"
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"	"0"
+				}
+				
+				"OverrideAnimation"		"ACT_DOTA_IDLE"	// egg_cast_supernova
+				
+				"OnAttacked"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"items.lua"
+						"Function"			"OnAttackedLog"
+						"Target"			"TARGET"
+						"max_hero_attacks"	"1"
+					}
+				}
+				
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"items.lua"
+						"Function"			"OnDestroyLog"
+						"Target"			"TARGET"
+					}
+				}
+			}
+			
+			//Stun not working for some reason, will verify after commit
+			"modifier_kawamari_log_explode_datadriven"
+			{
+				"IsHidden"	"0"
+				"IsDebuff"	"1"
+				
+				"OnCreated"
+				{
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Center"	"TARGET"
+							"Radius"	"250"
+							"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+							"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						}
+						
+						"Action"
+						{
+							"Stun"
+							{
+								"Duration"	"2"
+								"Target"	"TARGET"
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }
