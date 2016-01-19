@@ -593,6 +593,31 @@
 							},
 						]
 					},
+					{
+						_class = "CVattachment"
+						m_name = "attach_senpuu"
+						m_influences =
+						[
+							{
+								_class = "CVattachmentInfluence"
+								m_influenceName = "m3bone_root"
+								m_vTranslationOffset =
+								[
+									-0.000002,
+									7.062631,
+									0.000000,
+								]
+								m_vRotationOffset =
+								[
+									0.000000,
+									-0.000000,
+									-0.000007,
+								]
+								m_flWeight = 1.000000
+								m_bRoot = false
+							},
+						]
+					},
 				]
 			}
 		},

@@ -8094,6 +8094,11 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"particle"	"particles/rocklee/sandking_epicenter.vpcf"
+		"particle"	"particles/rocklee/sandking_epicenter_wave_1.vpcf"
+	}
 	"BaseClass"				"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
@@ -8208,6 +8213,32 @@
 						}
 					}
 				}
+				"AttachEffect"
+				{
+					"EffectName"	"particles/rocklee/sandking_epicenter.vpcf"
+					"EffectAttachType"	"attach_origin"
+					"Target"	"CASTER"
+					
+					"ControlPoints"
+					{
+						"00"	"0 0 0"
+						"01"	"%radius %radius %radius"
+					}
+				}
+			}
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"	"particles/rocklee/sandking_epicenter_wave_1.vpcf"
+					"EffectAttachType"	"follow_origin"
+					"Target"	"CASTER"
+					
+					"ControlPointEntities"
+					{
+						"CASTER" "attach_senpuu"
+					}
+				}
 			}
 			"States"
 			{
@@ -8241,6 +8272,8 @@
 	{
 		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
 		"particle"			"particles/generic_gameplay/generic_stunned_old.vpcf"
+		"particle"	"particles/rocklee/rubick_telekinesis_land_force.vpcf"
+		"particle"	"particles/rocklee/earthshaker_echoslam_start_cracks.vpcf"
 	}
 	
 	// Casting
@@ -8466,6 +8499,10 @@
 	{
 		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
 		"model"		"models/rocklee/rocklee_rage.vmdl"
+		"particle"	"particles/rocklee/espirit_spawn.vpcf"
+		"particle"	"particles/rocklee/dazzle_shallow_grave_halo_spiral.vpcf"
+		"particle"	"particles/eren_jaeger/espirit_spawn_groundburst2.vpcf"
+		"particle"	"particles/rocklee/elder_titan_echo_stomp.vpcf"
 	}
 
 	"OnSpellStart"
@@ -8499,6 +8536,23 @@
 			"EffectName"		"Hero_Terrorblade.Metamorphosis"
 			"Target"			"CASTER"
 		}
+		"FireEffect"
+		{
+			"EffectName"		"particles/eren_jaeger/espirit_spawn_groundburst2.vpcf"
+			"EffectAttachType" 	"attach_origin"
+			"Target" 			"CASTER"
+			"ControlPointEntities"
+			{
+				"CASTER"	"attach_origin"
+				"CASTER"	"attach_origin"
+			}
+		}
+		"FireEffect"
+		{
+			"EffectName"		"particles/rocklee/elder_titan_echo_stomp.vpcf"
+			"EffectAttachType" 	"attach_origin"
+			"Target" 			"CASTER"
+		}
 		"ApplyModifier"
 		{
 			"ModifierName"	"modifier_hachimon_tonko"
@@ -8522,6 +8576,9 @@
 			"Duration"	"%duration"
 			"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
 			"AllowsIllusionDuplicate"	"1"
+			
+			"EffectName"	"particles/rocklee/espirit_spawn.vpcf"
+			"EffectAttachType"	"follow_hitloc"
 
 			"OnCreated"
 			{
@@ -8700,13 +8757,7 @@
 
 	"precache"
 	{
-		"particle"	"particles/goku/teleport_end_ground_flash_league.vpcf"
-		"particle"	"particles/units/heroes/hero_sandking/sandking_epicenter.vpcf"
-		"particle"	"particles/goku/sf_fire_arcana_loadout_start_fire.vpcf"
-		"particle"	"particles/goku/silencer_last_word_status_ring_ember.vpcf"
-		"particle"	"particles/goku/teleport_end_ground_flash_leagu_extrae.vpcf"
-		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
-		"model"		"models/goku/goku_ss.vmdl"
+		"particle"	"particles/units/heroes/hero_brewmaster/brewmaster_drunken_haze_debuff.vpcf"
 	}
 
 	"OnSpellStart"
@@ -8729,6 +8780,8 @@
 			"Duration"	"%duration"
 			"AllowsIllusionDuplicate"	"1"
 			"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			"EffectName"	"particles/units/heroes/hero_brewmaster/brewmaster_drunken_haze_debuff.vpcf"
+			"EffectAttachType"	"follow_hitloc"
 
 			"Properties"
 			{

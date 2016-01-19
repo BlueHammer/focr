@@ -22,6 +22,13 @@ Timers:CreateTimer( target_duration, function()
 		model = model:NextMovePeer()
 		end
 	end
+	
+	local particle = ParticleManager:CreateParticle("particles/rocklee/rubick_telekinesis_land_force.vpcf", PATTACH_ABSORIGIN, target)
+	ParticleManager:SetParticleControl(particle, 0, target:GetAbsOrigin())
+	
+	local particle1 = ParticleManager:CreateParticle("particles/rocklee/earthshaker_echoslam_start_cracks.vpcf", PATTACH_ABSORIGIN, target)
+	ParticleManager:SetParticleControl(particle1, 0, target:GetAbsOrigin())
+	ParticleManager:SetParticleControl(particle1, 1, Vector(14, 0, 0))
 return nil
 end
 )
