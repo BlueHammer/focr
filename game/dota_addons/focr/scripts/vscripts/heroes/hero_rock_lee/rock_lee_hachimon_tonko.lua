@@ -22,6 +22,9 @@ function ModelSwapStart( keys )
 	caster:SetOriginalModel(model)
 	caster:SetModelScale(2.65)
 	
+	--applying particle
+	caster.Hachimon_particle = ParticleManager:CreateParticle("particles/rocklee/dazzle_shallow_grave_halo_spiral.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+	
 end
 
 function ModelSwapEnd( keys )
@@ -30,6 +33,8 @@ function ModelSwapEnd( keys )
 	caster:SetModel(caster.caster_model)
 	caster:SetOriginalModel(caster.caster_model)
 	caster:SetModelScale(caster.caster_model_scale)
+	
+	ParticleManager:DestroyParticle( caster.Hachimon_particle, false )
 	
 end
 
