@@ -65,6 +65,14 @@ if punch_landed < 20 then
 	
 	target:SetAbsOrigin(newPos)
 	caster:SetAbsOrigin(newPos)
+	
+	local refPoint = dummy:GetAbsOrigin() + Vector( 0, 0, 275 )
+	local direction = ( newPos - refPoint ):Normalized()
+	local particle = ParticleManager:CreateParticle("particles/rocklee/sven_storm_bolt_projectile_explosion.vpcf", PATTACH_ABSORIGIN, target)
+	ParticleManager:SetParticleControl(particle, 1, newPos)
+	ParticleManager:SetParticleControl(particle, 3, newPos)
+	ParticleManager:SetParticleControlOrientation(particle, 3, direction, direction, direction)
+
 	punch_landed = punch_landed + 1
 	print("BOO")
 	print(newPos)

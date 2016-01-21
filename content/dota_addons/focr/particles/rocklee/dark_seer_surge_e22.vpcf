@@ -11,9 +11,9 @@
 	]
 	m_ConstantColor =
 	[
-		85,
+		255,
+		51,
 		0,
-		127,
 		255,
 	]
 	m_bShouldSort = false
@@ -30,6 +30,7 @@
 			m_flTextureVScrollRate = -160.000000
 			m_nMaxTesselation = 3
 			m_nMinTesselation = 3
+			m_flOverbrightFactor = 3.000000
 		},
 	]
 	m_Operators =
@@ -56,6 +57,14 @@
 			m_flStartScale = 0.300000
 			m_flEndTime = 0.000000
 			m_flEndScale = 0.300000
+		},
+		{
+			_class = "C_OP_LockToBone"
+			m_HitboxSetName = "hands"
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_FadeOutSimple"
 		},
 	]
 	m_Initializers =
@@ -98,6 +107,7 @@
 				0.000000,
 				64.000000,
 			]
+			m_bDisableOperator = true
 		},
 		{
 			_class = "C_INIT_RemapScalar"
@@ -108,6 +118,12 @@
 			_class = "C_INIT_RingWave"
 			m_flInitialRadius = 1.000000
 			m_flThickness = 5.000000
+		},
+		{
+			_class = "C_INIT_CreateOnModel"
+			m_flHitBoxScale = 2.500000
+			m_HitboxSetName = "hands"
+			m_bDisableOperator = true
 		},
 	]
 	m_Emitters =
@@ -126,4 +142,5 @@
 		},
 	]
 	m_flConstantRadius = 0.840500
+	m_flConstantLifespan = 0.500000
 }

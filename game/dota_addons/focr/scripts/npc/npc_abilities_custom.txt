@@ -8562,6 +8562,15 @@
 				"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 			}
 		}
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_hachimon_effect"
+			"Target"
+			{
+				"Center"	"CASTER"
+				"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+			}
+		}
 		"RunScript"
 		{
 			"ScriptFile"	"scripts/vscripts/heroes/hero_rock_lee/rock_lee_hachimon_tonko.lua"
@@ -8827,6 +8836,8 @@
 	{
 		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
 		"particle"			"particles/generic_gameplay/generic_stunned_old.vpcf"
+		"particle"	"particles/rocklee/sven_storm_bolt_projectile_explosion.vpcf"
+		"particle"	"particles/rocklee/dark_seer_surge.vpcf"
 	}
 	
 	// Casting
@@ -8929,6 +8940,8 @@
 			"Duration"	"%duration"
 			"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
 			"IsDebuff"	"1"
+			"EffectName"	"particles/rocklee/dark_seer_surge.vpcf"
+			"EffectAttachType"	"attach_hitloc"
 			"OverrideAnimation"	"ACT_DOTA_DISABLED"
 
 			"States"

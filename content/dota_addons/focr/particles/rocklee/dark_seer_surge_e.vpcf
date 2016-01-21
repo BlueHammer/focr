@@ -11,7 +11,7 @@
 	]
 	m_ConstantColor =
 	[
-		85,
+		0,
 		0,
 		127,
 		255,
@@ -30,6 +30,7 @@
 			m_flTextureVScrollRate = -160.000000
 			m_nMaxTesselation = 3
 			m_nMinTesselation = 3
+			m_flOverbrightFactor = 3.000000
 		},
 	]
 	m_Operators =

@@ -38,9 +38,9 @@
 			_class = "C_OP_ColorInterpolate"
 			m_ColorFade =
 			[
-				255,
-				225,
-				160,
+				53,
+				112,
+				167,
 				255,
 			]
 		},
@@ -85,16 +85,16 @@
 			_class = "C_INIT_RandomColor"
 			m_ColorMin =
 			[
-				193,
-				17,
-				17,
+				0,
+				170,
+				255,
 				255,
 			]
 			m_ColorMax =
 			[
-				193,
-				17,
-				17,
+				0,
+				85,
+				255,
 				255,
 			]
 		},
@@ -109,19 +109,13 @@
 	m_Children =
 	[
 		{
-			m_ChildRef = resource:"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion_flash.vpcf"
+			m_ChildRef = resource:"particles/rocklee/sven_storm_bolt_projectile_explosion_trail.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion_trail.vpcf"
+			m_ChildRef = resource:"particles/rocklee/sven_storm_bolt_projectile_explosion_wave.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion_trailsb.vpcf"
-		},
-		{
-			m_ChildRef = resource:"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion_wave.vpcf"
-		},
-		{
-			m_ChildRef = resource:"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion_flash_b.vpcf"
+			m_ChildRef = resource:"particles/rocklee/sven_storm_bolt_projectile_explosion_flash_b.vpcf"
 		},
 		{
 			m_ChildRef = resource:"particles/units/heroes/hero_sven/sven_spell_stormbolt_explosion_light.vpcf"
