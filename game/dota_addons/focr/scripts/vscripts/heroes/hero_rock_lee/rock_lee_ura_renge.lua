@@ -81,6 +81,14 @@ else
 	local targetCurrentPos = target:GetAbsOrigin()
 	FindClearSpaceForUnit(target, targetCurrentPos, false)
 	FindClearSpaceForUnit(caster, targetCurrentPos, false)
+	
+	local particlePos = target:GetAbsOrigin()
+	local particle = ParticleManager:CreateParticle("particles/rocklee/sandking_epicenter.vpcf", PATTACH_ABSORIGIN, target)
+	ParticleManager:SetParticleControl(particle, 0, particlePos)
+	ParticleManager:SetParticleControl(particle, 1, Vector( 250, 250, 250 ))
+	
+	local particle1 = ParticleManager:CreateParticle("particles/rocklee/elder_titan_echo_stomp.vpcf", PATTACH_ABSORIGIN, target)
+	ParticleManager:SetParticleControl(particle1, 0, particlePos)
 	return nil
 end
 end

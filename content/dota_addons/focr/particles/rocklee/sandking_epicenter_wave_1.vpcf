@@ -58,6 +58,7 @@
 		},
 		{
 			_class = "C_OP_PositionLock"
+			m_bDisableOperator = true
 		},
 	]
 	m_Initializers =
@@ -74,8 +75,8 @@
 		},
 		{
 			_class = "C_INIT_RandomLifeTime"
-			m_fLifetimeMax = 2.000000
-			m_fLifetimeMin = 1.000000
+			m_fLifetimeMax = 0.800000
+			m_fLifetimeMin = 0.800000
 		},
 		{
 			_class = "C_INIT_RandomRadius"
@@ -132,7 +133,7 @@
 		},
 		{
 			_class = "C_OP_ContinuousEmitter"
-			m_flEmitRate = 20.000000
+			m_flEmitRate = 70.000000
 		},
 	]
 }

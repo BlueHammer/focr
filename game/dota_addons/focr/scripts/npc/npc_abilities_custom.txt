@@ -8503,6 +8503,7 @@
 		"particle"	"particles/rocklee/dazzle_shallow_grave_halo_spiral.vpcf"
 		"particle"	"particles/eren_jaeger/espirit_spawn_groundburst2.vpcf"
 		"particle"	"particles/rocklee/elder_titan_echo_stomp.vpcf"
+		"particle"	"particles/rocklee/sandking_epicenter_wave_1.vpcf"
 	}
 
 	"OnSpellStart"
@@ -8624,6 +8625,17 @@
 					"Function"		"HachimonTonkoEnd"
 				}
 			}
+		}
+		"modifier_hachimon_effect"
+		{
+			"IsHidden"	"1"
+			"IsPurgable"	"0"
+			"Duration"	"%duration"
+			"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+			"AllowsIllusionDuplicate"	"1"
+			
+			"EffectName"	"particles/rocklee/sandking_epicenter_wave_1.vpcf"
+			"EffectAttachType"	"attach_senpuu"
 		}
 	}
 }
@@ -8838,6 +8850,8 @@
 		"particle"			"particles/generic_gameplay/generic_stunned_old.vpcf"
 		"particle"	"particles/rocklee/sven_storm_bolt_projectile_explosion.vpcf"
 		"particle"	"particles/rocklee/dark_seer_surge.vpcf"
+		"particle"	"particles/rocklee/sandking_epicenter.vpcf"
+		"particle"	"particles/rocklee/elder_titan_echo_stomp.vpcf"
 	}
 	
 	// Casting
@@ -8940,9 +8954,10 @@
 			"Duration"	"%duration"
 			"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
 			"IsDebuff"	"1"
-			"EffectName"	"particles/rocklee/dark_seer_surge.vpcf"
-			"EffectAttachType"	"attach_hitloc"
 			"OverrideAnimation"	"ACT_DOTA_DISABLED"
+			
+			"EffectName"	"particles/rocklee/dark_seer_surge.vpcf"
+			"EffectAttachType"	"follow_origin"
 
 			"States"
 			{

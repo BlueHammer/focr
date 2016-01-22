@@ -49,9 +49,9 @@
 			_class = "C_OP_ColorInterpolate"
 			m_ColorFade =
 			[
-				46,
-				160,
-				212,
+				68,
+				68,
+				68,
 				255,
 			]
 		},

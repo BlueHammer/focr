@@ -11,9 +11,9 @@
 	]
 	m_ConstantColor =
 	[
-		0,
-		0,
-		127,
+		77,
+		77,
+		77,
 		255,
 	]
 	m_bShouldSort = false
