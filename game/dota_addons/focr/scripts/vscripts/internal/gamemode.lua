@@ -189,7 +189,7 @@ MAX_NUMBER_OF_TEAMS = 2
   --ListenToGameEvent('player_completed_game', Dynamic_Wrap(GameMode, 'OnPlayerCompletedGame'), self)
   --ListenToGameEvent('dota_match_done', Dynamic_Wrap(GameMode, 'OnDotaMatchDone'), self)
   --ListenToGameEvent('dota_combatlog', Dynamic_Wrap(GameMode, 'OnCombatLogEvent'), self)
-  --ListenToGameEvent('dota_player_killed', Dynamic_Wrap(GameMode, 'OnPlayerKilled'), self)
+  --ListenToGameEvent('dota_player_kill', Dynamic_Wrap(GameMode, 'OnPlayerKill'), self)
   --ListenToGameEvent('player_team', Dynamic_Wrap(GameMode, 'OnPlayerTeam'), self)
 
   --[[This block is only used for testing events handling in the event that Valve adds more in the future

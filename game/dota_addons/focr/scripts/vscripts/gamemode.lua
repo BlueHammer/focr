@@ -88,6 +88,56 @@ function GameMode:OnAllPlayersLoaded()
   
   DUEL = false
 
+  GameRules:GetGameModeEntity():SetModifyGoldFilter( Dynamic_Wrap( GameMode, "FilterModifyGold" ), self )
+  GameRules.PlayerBountyEligibility = {}
+
+end
+
+--function GameMode:OnEntityKilled( keys )
+--print("PRINTING KEYS")
+--DeepPrintTable( keys )
+--print("SOMEONE JUST DIED")
+--local killer = EntIndexToHScript(keys.entindex_attacker)
+--local killed = EntIndexToHScript(keys.entindex_killed)
+--local killerID = killer:GetPlayerOwner():GetPlayerID()
+--local stringID = tostring(killerID) 
+--print(killerID)
+--if killed:IsRealHero() and not(killed:IsIllusion()) and not(killed:IsReincarnating()) then
+--	if GameRules.PlayerBountyEligibility[stringID] == nil then
+--		GameRules.PlayerBountyEligibility[stringID] = 0
+--	end
+--	GameRules.PlayerBountyEligibility[stringID] = 1
+--end
+--end
+
+function GameMode:FilterModifyGold( filterTable )
+print("printing FILTERTAbLE")
+PrintTable(filterTable)
+print("someone modify gold")
+
+--if filterTable["reason_const"] == DOTA_ModifyGold_Death then
+--	return filterTable["gold"] == 0 
+--end
+--print("CHECKING FOR VALUE PRIOR IF")
+--print(GameRules.PlayerBountyEligibility[tostring(filterTable["player_id_const"])])
+if GameRules.PlayerBountyEligibility[filterTable["player_id_const"]] == nil then
+	GameRules.PlayerBountyEligibility[filterTable["player_id_const"]] = 0
+end
+
+filterTable["reliable"] = 0
+local playerKills = PlayerResource:GetKills(filterTable["player_id_const"])
+if filterTable["reason_const"] == DOTA_ModifyGold_HeroKill then
+	if filterTable["gold"] ~= 0 then
+		if GameRules.PlayerBountyEligibility[filterTable["player_id_const"]] < playerKills then
+			filterTable["gold"] = 500
+			GameRules.PlayerBountyEligibility[filterTable["player_id_const"]] = GameRules.PlayerBountyEligibility[filterTable["player_id_const"]] + 1
+		else
+			filterTable["gold"] = 0
+		end
+	end
+end
+
+return true
 end
 
 function GameMode:OnNPCSpawned(keys)
