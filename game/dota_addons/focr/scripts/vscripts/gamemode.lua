@@ -88,6 +88,7 @@ function GameMode:OnAllPlayersLoaded()
   
   DUEL = false
 
+  GameRules:GetGameModeEntity():SetDamageFilter( Dynamic_Wrap( GameMode, "FilterModifyDamage" ), self )
   GameRules:GetGameModeEntity():SetModifyGoldFilter( Dynamic_Wrap( GameMode, "FilterModifyGold" ), self )
   GameRules.PlayerBountyEligibility = {}
 
@@ -137,6 +138,26 @@ if filterTable["reason_const"] == DOTA_ModifyGold_HeroKill then
 	end
 end
 
+return true
+end
+
+function GameMode:FilterModifyDamage( filterTable )
+print("SOMEONE WAS DAMAGED")
+PrintTable( filterTable )
+local herodamaged = EntIndexToHScript(filterTable["entindex_victim_const"])
+local attacker_name = EntIndexToHScript(filterTable["entindex_attacker_const"]):GetUnitName()
+--print(attacker_name)
+if herodamaged:GetHealth() < filterTable["damage"] and (attacker_name == "building_tower_blue" or "building_tower_red") then
+	filterTable["damage"] = 0
+	local damageTable =
+	{
+		victim = EntIndexToHScript(filterTable["entindex_victim_const"]),
+		attacker = EntIndexToHScript(filterTable["entindex_victim_const"]),
+		damage = herodamaged:GetHealth(),
+		damage_type = DAMAGE_TYPE_PURE   
+	}
+	ApplyDamage( damageTable )
+end
 return true
 end
 
