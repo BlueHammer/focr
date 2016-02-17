@@ -243,4 +243,6 @@
 	"item_recipe_guardian_greaves"			"REMOVE"
 	"item_crimson_guard"		"REMOVE"
 	"item_recipe_crimson_guard"			"REMOVE"
+	"item_silver_edge"			"REMOVE"
+	"item_recipe_silver_edge"			"REMOVE"
 }

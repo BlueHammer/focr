@@ -79,7 +79,7 @@ function cloneorb_datadriven_on_spell_start(keys)
 	
 	--Create the illusions.
 	local illusion1 = nil
-	illusion1 = create_illusion(keys, illusion1_origin, 200, -90, 20)
+	illusion1 = create_illusion(keys, illusion1_origin, 200, -100, 20)
 	
 	--Reset our illusion origin variables because CreateUnitByName might have slightly changed the origin so that the unit won't be stuck.
 	illusion1_origin = illusion1:GetAbsOrigin()
@@ -105,10 +105,6 @@ function cloneorb_datadriven_on_spell_start(keys)
 	local caster_mana = keys.caster:GetMana()
 	illusion1:SetHealth(caster_health)
 	illusion1:SetMana(caster_mana)
-end
-
-function kawamari_on_spell_start(event)
-
 end
 
 --[[
